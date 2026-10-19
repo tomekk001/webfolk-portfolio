@@ -63,7 +63,7 @@
     for (i = 0; i < n; i++) {
       var p = el("g", { transform: "rotate(" + (i * step) + ")" }, main);
       el("path", { d: leaf(150, opts.wide), style: fill(c[0]) }, p);
-      el("path", { d: leaf(78, opts.wide * 0.38), transform: "translate(0 -44)", style: "fill:var(--papier)" }, p);
+      el("path", { d: leaf(78, opts.wide * 0.38), transform: "translate(0 -44)", style: "fill:var(--r-bg)" }, p);
       el("rect", { x: -6, y: -126, width: 12, height: 12, transform: "rotate(45 0 -120)", style: fill(c[3]) }, p);
     }
 
@@ -75,7 +75,7 @@
         el("path", {
           d: CURSOR,
           transform: "rotate(" + angle + ") translate(0 -72) rotate(180) translate(-11 0)",
-          style: fill(c[1]) + ";stroke:var(--papier);stroke-width:2;stroke-linejoin:round"
+          style: fill(c[1]) + ";stroke:var(--r-bg);stroke-width:2;stroke-linejoin:round"
         }, web);
       } else {
         el("path", {
@@ -89,7 +89,7 @@
     // Warstwa 5: środek
     var core = el("g", { "class": "layer" }, svg);
     el("circle", { r: 36, style: fill(c[2]) }, core);
-    el("circle", { r: 24, style: "fill:var(--papier)" }, core);
+    el("circle", { r: 24, style: "fill:var(--r-bg)" }, core);
     el("rect", { x: -11, y: -11, width: 22, height: 22, transform: "rotate(45)", style: fill(c[0]) }, core);
 
     if (!reduceMotion) {
@@ -100,7 +100,7 @@
   }
 
   if (svg) {
-    draw({ n: 8, wide: 30, colors: ["--malwa", "--kobalt", "--zielen", "--slonce"] });
+    draw({ n: 8, wide: 30, colors: ["--r1", "--r2", "--r3", "--r4"] });
 
     var btn = document.getElementById("recut");
     var last = 8;
