@@ -20,8 +20,6 @@
 Użyj **Edit → Replace in Files** (Cmd+Shift+H / Ctrl+Shift+H):
 
 - `kontakt@webfolk.pl` → zostaw, jeśli założysz taką skrzynkę przy domenie
-- Zdjęcie: wrzuć plik, np. `ja.jpg`, do folderu i w `style.css` w regule `.about__photo` zamień tło na
-  `background: url("ja.jpg") center / cover;`, a w `index.html` usuń napis „Twoje zdjęcie”.
 - Ceny w sekcji „Oferta” w `index.html`. Cena opieki nad stroną celowo nie jest podana; przy wycenach orientacyjnie 179–249 zł miesięcznie.
 
 ## Publikacja pod webfolk.pl

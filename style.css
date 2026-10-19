@@ -750,3 +750,15 @@ body::before {
 .cform__captcha { min-height: 78px; }
 .cform__ok { background: var(--na-swierk); color: var(--swierk); padding: 12px 14px; border-radius: var(--r); font-weight: 600; }
 .cform .btn:disabled { opacity: .6; cursor: wait; }
+
+.about__img {
+  display: block;
+  width: min(100%, 400px);
+  max-width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border-radius: 200px 200px var(--r) var(--r);
+  border: 1px solid var(--linia);
+  box-shadow: 0 30px 60px -40px rgba(18, 40, 34, .45);
+}
