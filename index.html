@@ -1,0 +1,286 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>WebFolk</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="WebFolk projektuje i prowadzi strony internetowe dla lokalnych firm: kawiarni, warsztatów, salonów i gabinetów.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Figtree:ital,wght@0,400;0,500;0,700;1,400&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="top">
+  <div class="top__in">
+    <a class="logo" href="#start" aria-label="WebFolk, strona główna">
+      <svg class="logo__mark" viewBox="-50 -50 100 100" aria-hidden="true">
+        <g class="logo__petals">
+          <path d="M0 0C9-12 9-30 0-44C-9-30-9-12 0 0Z"/>
+          <path d="M0 0C9-12 9-30 0-44C-9-30-9-12 0 0Z" transform="rotate(90)"/>
+          <path d="M0 0C9-12 9-30 0-44C-9-30-9-12 0 0Z" transform="rotate(180)"/>
+          <path d="M0 0C9-12 9-30 0-44C-9-30-9-12 0 0Z" transform="rotate(270)"/>
+        </g>
+        <rect class="logo__px" x="-7" y="-7" width="14" height="14" transform="rotate(45)"/>
+      </svg>
+      <span>WebFolk</span>
+    </a>
+    <nav class="nav" aria-label="Menu główne">
+      <a href="#realizacje">Realizacje</a>
+      <a href="#oferta">Oferta</a>
+      <a href="#proces">Jak pracuję</a>
+      <a class="nav__cta" href="#kontakt">Kontakt</a>
+    </nav>
+  </div>
+</header>
+
+<main id="start">
+
+  <section class="hero">
+    <div class="wrap hero__grid">
+      <div class="hero__text">
+        <h1>Strony internetowe dla firm z sąsiedztwa</h1>
+        <p class="lead">Projektuję i prowadzę strony dla lokalnych firm: kawiarni, warsztatów, salonów i gabinetów. Każda jest robiona od zera, pod konkretną firmę i jej klientów.</p>
+        <div class="hero__actions">
+          <a class="btn btn--main" href="#kontakt">Umów bezpłatną rozmowę</a>
+          <a class="btn btn--ghost" href="#realizacje">Zobacz realizacje</a>
+        </div>
+        <ul class="facts">
+          <li><strong>7 dni</strong> do pierwszej wersji strony</li>
+          <li><strong>od 1 500 zł</strong> za gotową stronę</li>
+          <li><strong>1 osoba</strong> od rozmowy do publikacji</li>
+        </ul>
+      </div>
+
+      <figure class="cutout">
+        <svg id="rosette" class="cutout__svg" viewBox="-200 -200 400 400" role="img" aria-label="Wycinanka ludowa ułożona z elementów stron internetowych"></svg>
+        <figcaption class="cutout__cap">
+          <span>Wycinanka z kursorów, pikseli i nawiasów. Każda strona też jest inna.</span>
+          <button class="cutout__btn" id="recut" type="button">Wytnij nowy wzór</button>
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="section" id="realizacje" aria-labelledby="realizacje-h">
+    <div class="wrap">
+      <div class="head">
+        <h2 id="realizacje-h">Realizacje</h2>
+        <p>Trzy projekty pokazowe dla typowych lokalnych firm. Tak może wyglądać Twoja strona: z własnym charakterem, a nie z szablonu.</p>
+      </div>
+
+      <div class="works">
+        <article class="work work--cafe">
+          <div class="mock" aria-hidden="true">
+            <div class="mock__bar"><i></i><i></i><i></i><span>kawiarniapodlipa.pl</span></div>
+            <div class="mock__body">
+              <div class="m-nav"><b>Pod Lipą</b><span>Menu</span><span>Godziny</span><span>Dojazd</span></div>
+              <div class="m-hero">
+                <div>
+                  <p class="m-title">Kawa, ciasto i ogródek pod starą lipą</p>
+                  <span class="m-btn">Zobacz menu</span>
+                </div>
+                <div class="m-img m-img--leaves"></div>
+              </div>
+              <div class="m-row"><span>Szarlotka dnia</span><span>Flat white</span><span>Lemoniada</span></div>
+            </div>
+          </div>
+          <div class="work__info">
+            <h3>Kawiarnia Pod Lipą</h3>
+            <p>Menu, które właścicielka zmienia sama z telefonu, godziny otwarcia i mapa dojazdu.</p>
+            <p class="work__tag">Projekt pokazowy</p>
+          </div>
+        </article>
+
+        <article class="work work--auto">
+          <div class="mock" aria-hidden="true">
+            <div class="mock__bar"><i></i><i></i><i></i><span>autokowal.pl</span></div>
+            <div class="mock__body">
+              <div class="m-nav"><b>AUTO KOWAL</b><span>Usługi</span><span>Cennik</span></div>
+              <div class="m-hero m-hero--stack">
+                <p class="m-title">Wymiana opon w 30 minut</p>
+                <span class="m-btn">Zarezerwuj termin</span>
+              </div>
+              <div class="m-row m-row--price"><span>Opony</span><span>Olej</span><span>Klima</span></div>
+            </div>
+          </div>
+          <div class="work__info">
+            <h3>Auto Kowal</h3>
+            <p>Rezerwacja terminu online i jasny cennik usług, żeby klienci nie musieli dzwonić.</p>
+            <p class="work__tag">Projekt pokazowy</p>
+          </div>
+        </article>
+
+        <article class="work work--salon">
+          <div class="mock" aria-hidden="true">
+            <div class="mock__bar"><i></i><i></i><i></i><span>salonmalwa.pl</span></div>
+            <div class="mock__body">
+              <div class="m-nav"><b>Malwa</b><span>Zabiegi</span><span>Zespół</span></div>
+              <div class="m-hero">
+                <div class="m-img m-img--bloom"></div>
+                <div>
+                  <p class="m-title">Fryzura, po której wychodzisz pewniej</p>
+                  <span class="m-btn">Umów wizytę</span>
+                </div>
+              </div>
+              <div class="m-row"><span>Strzyżenie</span><span>Koloryzacja</span></div>
+            </div>
+          </div>
+          <div class="work__info">
+            <h3>Studio Malwa</h3>
+            <p>Galeria metamorfoz, przedstawienie zespołu i zapisy połączone z kalendarzem salonu.</p>
+            <p class="work__tag">Projekt pokazowy</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--tint" id="oferta" aria-labelledby="oferta-h">
+    <div class="wrap">
+      <div class="head">
+        <h2 id="oferta-h">Oferta</h2>
+        <p>Ceny zależą od zakresu, ale zawsze znasz kwotę przed startem. Każda strona działa na telefonie, ładuje się szybko i jest przygotowana pod Google.</p>
+      </div>
+
+      <div class="offers">
+        <article class="offer">
+          <h3>Wizytówka</h3>
+          <p class="offer__price">od 1 500 zł</p>
+          <p>Jedna przejrzysta strona: kim jesteś, co robisz, gdzie Cię znaleźć.</p>
+          <ul>
+            <li>do 5 sekcji na jednej stronie</li>
+            <li>mapa, godziny i telefon</li>
+            <li>gotowa w około tydzień</li>
+          </ul>
+        </article>
+        <article class="offer offer--pick">
+          <h3>Strona firmowa</h3>
+          <p class="offer__price">od 3 000 zł</p>
+          <p>Pełna strona z ofertą, galerią i formularzem kontaktowym.</p>
+          <ul>
+            <li>do 6 podstron</li>
+            <li>treści, które zmienisz sam</li>
+            <li>wizytówka Google w pakiecie</li>
+          </ul>
+          <p class="offer__note">Najczęściej wybierana</p>
+        </article>
+        <article class="offer">
+          <h3>Rezerwacje i sklep</h3>
+          <p class="offer__price">wycena indywidualna</p>
+          <p>Gdy klienci mają zapisywać się na wizyty albo kupować online.</p>
+          <ul>
+            <li>kalendarz rezerwacji</li>
+            <li>płatności online</li>
+            <li>powiadomienia SMS i e-mail</li>
+          </ul>
+        </article>
+      </div>
+
+      <div class="care">
+        <div>
+          <h3>Opieka nad stroną</h3>
+          <p>Hosting, kopie zapasowe, aktualizacje i drobne zmiany w treści. Piszesz, co zmienić, a ja to robię.</p>
+        </div>
+        <p class="care__price">149 zł <span>miesięcznie</span></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="proces" aria-labelledby="proces-h">
+    <div class="wrap">
+      <div class="head">
+        <h2 id="proces-h">Jak pracuję</h2>
+        <p>Od pierwszej rozmowy do działającej strony zwykle mijają dwa tygodnie.</p>
+      </div>
+      <ol class="steps">
+        <li>
+          <h3>Rozmowa</h3>
+          <p>Dwadzieścia minut przez telefon albo przy kawie. Pytam o firmę, klientów i to, czego oczekujesz. Bez opłat.</p>
+        </li>
+        <li>
+          <h3>Projekt</h3>
+          <p>W ciągu tygodnia dostajesz link do pierwszej wersji strony. Oglądasz ją na swoim telefonie, a nie na rysunku.</p>
+        </li>
+        <li>
+          <h3>Poprawki i start</h3>
+          <p>Nanoszę Twoje uwagi, podpinam domenę i pocztę, zgłaszam stronę do Google.</p>
+        </li>
+        <li>
+          <h3>Opieka</h3>
+          <p>Po starcie dbam o stronę dalej. Jedna wiadomość wystarczy, żeby zmienić cennik czy godziny.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="section section--tint" id="o-mnie" aria-labelledby="omnie-h">
+    <div class="wrap about">
+      <div class="about__photo" role="img" aria-label="Miejsce na Twoje zdjęcie">
+        <span>Twoje zdjęcie</span>
+      </div>
+      <div class="about__text">
+        <h2 id="omnie-h">Cześć, jestem [Twoje imię]</h2>
+        <p>WebFolk to moja pracownia. Robię strony dla firm, które znam z ulicy: piekarni, warsztatów, gabinetów i salonów. Wierzę, że mała firma zasługuje na stronę tak samo dopracowaną jak duża.</p>
+        <p>Pracujesz bezpośrednio ze mną, bez pośredników i działu obsługi klienta. Odbieram telefon także po wdrożeniu.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="pytania" aria-labelledby="pytania-h">
+    <div class="wrap faq">
+      <h2 id="pytania-h">Częste pytania</h2>
+      <div class="faq__list">
+        <details>
+          <summary>Czy muszę mieć już domenę i hosting?</summary>
+          <p>Nie. Pomogę wybrać i zarejestrować domenę, a hosting jest w cenie opieki nad stroną.</p>
+        </details>
+        <details>
+          <summary>Czy sam zmienię treści na stronie?</summary>
+          <p>Tak, w pakiecie Strona firmowa dostajesz prosty panel do zmiany tekstów, zdjęć i cennika. Możesz też po prostu napisać do mnie.</p>
+        </details>
+        <details>
+          <summary>Co, jeśli nie mam zdjęć ani tekstów?</summary>
+          <p>Napiszę teksty na podstawie naszej rozmowy, a zdjęcia dobierzemy z banków zdjęć albo umówimy krótką sesję.</p>
+        </details>
+        <details>
+          <summary>Jak wygląda płatność?</summary>
+          <p>Połowa przed startem, reszta po Twojej akceptacji gotowej strony. Wystawiam fakturę.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="kontakt" aria-labelledby="kontakt-h">
+    <div class="wrap contact__in">
+      <h2 id="kontakt-h">Porozmawiajmy o Twojej stronie</h2>
+      <p class="contact__lead">Napisz albo zadzwoń. Odpowiadam w ciągu jednego dnia roboczego.</p>
+      <div class="contact__ways">
+        <div class="way">
+          <p class="way__label">E-mail</p>
+          <a class="way__value" id="mail" href="mailto:kontakt@webfolk.pl">kontakt@webfolk.pl</a>
+          <button class="copy" type="button" data-copy="kontakt@webfolk.pl">Kopiuj adres</button>
+        </div>
+        <div class="way">
+          <p class="way__label">Telefon</p>
+          <a class="way__value" href="tel:+48000000000">+48 000 000 000</a>
+          <button class="copy" type="button" data-copy="+48 000 000 000">Kopiuj numer</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap foot__in">
+    <p>© <span id="year">2026</span> WebFolk</p>
+    <p>Strony internetowe dla lokalnych firm</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
