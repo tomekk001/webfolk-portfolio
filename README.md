@@ -32,4 +32,4 @@ Użyj **Edit → Replace in Files** (Cmd+Shift+H / Ctrl+Shift+H):
 2. Najprościej: darmowe konto na Netlify → przeciągnij folder `webfolk` na stronę „Deploy manually”.
 3. W ustawieniach Netlify dodaj własną domenę i ustaw rekordy DNS u rejestratora według instrukcji Netlify.
 
-Projekty w sekcji „Realizacje” są oznaczone jako pokazowe. Gdy zrobisz stronę dla prawdziwego klienta, zamień je na swoje realizacje.
+Sekcja „Realizacje” linkuje do 8 stron pokazowych, każda w osobnym repozytorium i opublikowana przez GitHub Pages (tomekk001.github.io/nazwa-repo). Miniatury są w folderze `img`.
