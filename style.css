@@ -461,11 +461,31 @@ body::before {
   background: var(--swierk);
   color: var(--na-swierk);
 }
-.care > div { display: grid; gap: 6px; min-width: 0; flex: 1 1 320px; }
+.care__main { display: grid; gap: 8px; min-width: 0; flex: 1 1 420px; }
 .care h3 { font-size: var(--t-l); font-weight: 700; }
-.care p { opacity: .85; max-width: 40em; }
-.care .care__price { font-size: 2rem; font-weight: 700; letter-spacing: -0.03em; line-height: 1; opacity: 1; white-space: nowrap; }
-.care__price span { font-size: var(--t-s); font-weight: 500; letter-spacing: 0; opacity: .8; }
+.care__main > p { opacity: .85; max-width: 40em; }
+.care__list {
+  list-style: none;
+  margin: 10px 0 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  font-size: var(--t-s);
+}
+.care__list li {
+  padding: 4px 12px;
+  border-radius: 999px;
+  border: 1px solid color-mix(in srgb, var(--na-swierk) 30%, transparent);
+}
+.care .care__offer {
+  flex: 0 1 300px;
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  text-wrap: balance;
+}
 
 /* ---------- Proces: prawdziwa kolejność, więc numeracja ---------- */
 .steps {

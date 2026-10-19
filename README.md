@@ -10,10 +10,9 @@
 
 ## Uruchomienie w VS Code
 
-1. Rozpakuj `webfolk.zip`, np. do `Dokumenty/webfolk`.
-2. W VS Code: **File → Open Folder…** i wybierz folder `webfolk`.
-3. Zainstaluj rozszerzenie **Live Server** (autor: Ritwick Dey): ikona kostek po lewej, wpisz „Live Server”, kliknij Install.
-4. Kliknij prawym przyciskiem na `index.html` → **Open with Live Server**.
+1. W VS Code: **File → Open Folder…** i wybierz folder `Documents\claude\portfolio`.
+2. Zainstaluj rozszerzenie **Live Server** (autor: Ritwick Dey): ikona kostek po lewej, wpisz „Live Server”, kliknij Install.
+3. Kliknij prawym przyciskiem na `index.html` → **Open with Live Server**.
    Strona otworzy się w przeglądarce i odświeży się sama po każdym zapisie pliku (Cmd+S / Ctrl+S).
 
 ## Co podmienić przed publikacją
@@ -25,7 +24,7 @@ Użyj **Edit → Replace in Files** (Cmd+Shift+H / Ctrl+Shift+H):
 - `kontakt@webfolk.pl` → zostaw, jeśli założysz taką skrzynkę przy domenie
 - Zdjęcie: wrzuć plik, np. `ja.jpg`, do folderu i w `style.css` w regule `.about__photo` zamień tło na
   `background: url("ja.jpg") center / cover;`, a w `index.html` usuń napis „Twoje zdjęcie”.
-- Ceny w sekcji „Oferta” w `index.html`.
+- Ceny w sekcji „Oferta” w `index.html`. Cena opieki nad stroną celowo nie jest podana; przy wycenach orientacyjnie 179–249 zł miesięcznie.
 
 ## Publikacja pod webfolk.pl
 
