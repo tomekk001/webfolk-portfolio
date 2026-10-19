@@ -19,7 +19,6 @@
 
 Użyj **Edit → Replace in Files** (Cmd+Shift+H / Ctrl+Shift+H):
 
-- `[Twoje imię]` → Twoje imię
 - `kontakt@webfolk.pl` → zostaw, jeśli założysz taką skrzynkę przy domenie
 - Zdjęcie: wrzuć plik, np. `ja.jpg`, do folderu i w `style.css` w regule `.about__photo` zamień tło na
   `background: url("ja.jpg") center / cover;`, a w `index.html` usuń napis „Twoje zdjęcie”.
