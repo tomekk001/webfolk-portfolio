@@ -583,3 +583,150 @@ body::before {
 /* ---------- Stopka ---------- */
 .foot { padding-block: 28px; font-size: var(--t-s); color: var(--szary); }
 .foot__in { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 24px; }
+
+/* ---------- Standard każdej strony ---------- */
+.feats {
+  display: grid;
+  gap: 0;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr));
+  border-top: 1px solid var(--linia);
+  border-left: 1px solid var(--linia);
+}
+.feat {
+  display: grid;
+  gap: 10px;
+  align-content: start;
+  padding: 28px;
+  border-right: 1px solid var(--linia);
+  border-bottom: 1px solid var(--linia);
+  background: var(--karta);
+  min-width: 0;
+}
+.feat__ico {
+  width: 36px;
+  height: 36px;
+  fill: none;
+  stroke: var(--swierk);
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.feat__ico circle[r="1.6"] { fill: var(--swierk); }
+.feat h3 { font-size: var(--t-l); font-weight: 700; }
+.feat p { color: var(--szary); }
+
+/* ---------- Pas z zaproszeniem na rozmowę ---------- */
+.band { background: var(--swierk); color: var(--na-swierk); }
+.band__in {
+  padding-block: clamp(48px, 6vw, 72px);
+  display: grid;
+  gap: 28px;
+  align-items: center;
+}
+@media (min-width: 860px) { .band__in { grid-template-columns: minmax(0, 1.5fr) auto; } }
+.band h2 { font-size: var(--t-xl); font-weight: 700; letter-spacing: -0.03em; line-height: 1.1; }
+.band p { margin-top: 12px; opacity: .85; max-width: 36em; font-size: var(--t-l); }
+.band__act { display: grid; gap: 12px; justify-items: start; }
+.band__tel { color: var(--na-swierk); opacity: .85; text-underline-offset: 4px; }
+.btn--light { background: var(--na-swierk); color: var(--swierk); }
+.btn--light:hover { background: #FFFFFF; color: var(--swierk); }
+
+/* ---------- Modele rozliczenia ---------- */
+.models { margin-top: clamp(48px, 6vw, 72px); }
+.models__h { font-size: var(--t-l); font-weight: 700; margin-bottom: 20px; }
+.models__grid { display: grid; gap: 20px; }
+@media (min-width: 760px) { .models__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.model {
+  display: grid;
+  gap: 10px;
+  align-content: start;
+  padding: 28px;
+  border: 1px solid var(--linia);
+  border-radius: var(--r);
+  min-width: 0;
+}
+.model h4 { margin: 0; font-size: var(--t-l); font-weight: 700; }
+.model p { color: var(--szary); }
+.model ul { margin: 6px 0 0; padding: 0; list-style: none; display: grid; gap: 8px; font-size: var(--t-s); }
+.model li { display: flex; gap: 10px; align-items: baseline; }
+.model li::before {
+  content: "";
+  flex: none;
+  width: 10px; height: 6px;
+  border-left: 2px solid var(--swierk);
+  border-bottom: 2px solid var(--swierk);
+  transform: rotate(-45deg) translateY(-3px);
+}
+
+/* ---------- Dodatkowe usługi ---------- */
+.extras {
+  margin: 0;
+  display: grid;
+  gap: 0 40px;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 320px), 1fr));
+}
+.extras div { padding: 22px 0; border-top: 1px solid var(--linia); display: grid; gap: 6px; }
+.extras dt { font-weight: 700; font-size: var(--t-l); }
+.extras dd { margin: 0; color: var(--szary); }
+
+/* ---------- Formularz kontaktowy ---------- */
+.cform {
+  margin-top: 20px;
+  display: grid;
+  gap: 16px;
+  padding: clamp(22px, 3vw, 32px);
+  border: 1px solid color-mix(in srgb, var(--na-swierk) 22%, transparent);
+  border-radius: var(--r);
+  max-width: 760px;
+}
+.cform h3 { font-size: var(--t-l); font-weight: 700; }
+.cform__row { display: grid; gap: 16px; }
+@media (min-width: 640px) { .cform__row { grid-template-columns: 1fr 1fr; } }
+.cform label { display: grid; gap: 6px; font-size: var(--t-s); font-weight: 500; min-width: 0; }
+.cform input:not([type="checkbox"]), .cform select, .cform textarea {
+  font: inherit;
+  font-size: var(--t-m);
+  color: var(--tekst);
+  background: var(--karta);
+  border: 1px solid transparent;
+  border-radius: var(--r);
+  padding: 11px 13px;
+  width: 100%;
+}
+.cform textarea { resize: vertical; }
+.cform input:focus, .cform select:focus, .cform textarea:focus { outline: 2px solid var(--na-swierk); outline-offset: 2px; }
+.cform__check { display: flex !important; gap: 10px; align-items: flex-start; font-weight: 400 !important; }
+.cform__check input { width: 18px; height: 18px; margin-top: 3px; accent-color: var(--na-swierk); flex: none; }
+.cform__err { color: #FFD9DF; font-weight: 600; }
+.cform__hint { font-size: var(--t-xs); opacity: .75; }
+.cform .btn { justify-self: start; }
+
+/* ---------- Pasek kontaktu na telefonie ---------- */
+.callbar { display: none; }
+@media (max-width: 680px) {
+  .callbar {
+    position: fixed;
+    left: 0; right: 0; bottom: 0;
+    z-index: 25;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    padding: 10px max(12px, env(safe-area-inset-right, 0px)) calc(10px + env(safe-area-inset-bottom, 0px)) max(12px, env(safe-area-inset-left, 0px));
+    background: color-mix(in srgb, var(--tlo) 94%, transparent);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-top: 1px solid var(--linia);
+  }
+  .callbar a {
+    display: grid;
+    place-items: center;
+    min-height: 46px;
+    border-radius: var(--r);
+    font-weight: 600;
+    text-decoration: none;
+    border: 1px solid var(--swierk);
+    color: var(--swierk);
+  }
+  .callbar a:first-child { background: var(--swierk); color: var(--na-swierk); }
+  .foot { padding-bottom: 96px; }
+}

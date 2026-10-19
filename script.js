@@ -137,6 +137,23 @@
     });
   });
 
+
+  // Formularz: składa wiadomość i otwiera program pocztowy
+  var form = document.getElementById("cform");
+  if (form) {
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      var err = document.getElementById("f-err");
+      var name = form.elements.name.value.trim(), contact = form.elements.contact.value.trim();
+      if (!name || !contact) { err.hidden = false; err.textContent = "Wpisz imię i telefon albo e-mail, żebym mógł odpowiedzieć."; return; }
+      if (!document.getElementById("f-rodo").checked) { err.hidden = false; err.textContent = "Zaznacz zgodę na użycie danych do odpowiedzi."; return; }
+      err.hidden = true;
+      var type = form.elements.type.value, msg = form.elements.message.value.trim();
+      var body = "Imię: " + name + "\nKontakt: " + contact + "\nTemat: " + type + "\n\n" + msg;
+      window.location.href = "mailto:kontakt@webfolk.pl?subject=" + encodeURIComponent("Zapytanie ze strony: " + type) + "&body=" + encodeURIComponent(body);
+    });
+  }
+
   var year = document.getElementById("year");
   if (year) year.textContent = new Date().getFullYear();
 })();
