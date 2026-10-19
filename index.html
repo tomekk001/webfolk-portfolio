@@ -369,6 +369,9 @@
       </div>
       <form class="cform" id="cform" novalidate>
         <h3>Napisz, czego potrzebujesz</h3>
+        <input type="hidden" name="access_key" value="WEB3FORMS_ACCESS_KEY">
+        <input type="hidden" name="from_name" value="Formularz webfolk.pl">
+        <input type="checkbox" name="botcheck" class="cform__trap" tabindex="-1" autocomplete="off" aria-hidden="true">
         <div class="cform__row">
           <label for="f-name">Imię<input id="f-name" name="name" autocomplete="name" required></label>
           <label for="f-contact">Telefon lub e-mail<input id="f-contact" name="contact" autocomplete="email" required></label>
@@ -384,9 +387,10 @@
         </label>
         <label for="f-msg">Wiadomość<textarea id="f-msg" name="message" rows="4" placeholder="Np. mam salon fryzjerski w Gdyni i chcę, żeby klientki mogły zapisywać się online."></textarea></label>
         <label class="cform__check" for="f-rodo"><input type="checkbox" id="f-rodo" required> <span>Zgadzam się, żeby WebFolk użył moich danych tylko do odpowiedzi na to zapytanie.</span></label>
-        <p class="cform__err" id="f-err" hidden></p>
-        <button class="btn btn--light" type="submit">Wyślij zapytanie</button>
-        <p class="cform__hint">Po kliknięciu otworzy się Twój program pocztowy z gotową wiadomością do kontakt@webfolk.pl.</p>
+        <div class="h-captcha cform__captcha" data-captcha="true"></div>
+        <p class="cform__err" id="f-err" role="alert" hidden></p>
+        <button class="btn btn--light" type="submit" id="f-send">Wyślij zapytanie</button>
+        <p class="cform__ok" id="f-ok" role="status" hidden>Dziękuję, wiadomość została wysłana. Odpowiem w ciągu jednego dnia roboczego.</p>
       </form>
     </div>
   </section>
@@ -406,5 +410,6 @@
 </footer>
 
 <script src="script.js"></script>
+<script src="https://web3forms.com/client/script.js" async defer></script>
 </body>
 </html>

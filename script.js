@@ -138,19 +138,32 @@
   });
 
 
-  // Formularz: składa wiadomość i otwiera program pocztowy
+  // Formularz: wysyła wiadomość przez Web3Forms, z weryfikacją hCaptcha
   var form = document.getElementById("cform");
   if (form) {
+    var err = document.getElementById("f-err"), ok = document.getElementById("f-ok"), send = document.getElementById("f-send");
+    function fail(t) { err.hidden = false; err.textContent = t; }
     form.addEventListener("submit", function (e) {
       e.preventDefault();
-      var err = document.getElementById("f-err");
+      err.hidden = true; ok.hidden = true;
       var name = form.elements.name.value.trim(), contact = form.elements.contact.value.trim();
-      if (!name || !contact) { err.hidden = false; err.textContent = "Wpisz imię i telefon albo e-mail, żebym mógł odpowiedzieć."; return; }
-      if (!document.getElementById("f-rodo").checked) { err.hidden = false; err.textContent = "Zaznacz zgodę na użycie danych do odpowiedzi."; return; }
-      err.hidden = true;
-      var type = form.elements.type.value, msg = form.elements.message.value.trim();
-      var body = "Imię: " + name + "\nKontakt: " + contact + "\nTemat: " + type + "\n\n" + msg;
-      window.location.href = "mailto:kontakt@webfolk.pl?subject=" + encodeURIComponent("Zapytanie ze strony: " + type) + "&body=" + encodeURIComponent(body);
+      if (!name || !contact) return fail("Wpisz imię i telefon albo e-mail, żebym mógł odpowiedzieć.");
+      if (!document.getElementById("f-rodo").checked) return fail("Zaznacz zgodę na użycie danych do odpowiedzi.");
+      var cap = form.querySelector('[name="h-captcha-response"]');
+      if (!cap || !cap.value) return fail("Zaznacz pole „Nie jestem robotem”.");
+      if (form.elements.access_key.value.indexOf("WEB3FORMS") === 0) return fail("Formularz nie jest jeszcze podłączony. Napisz bezpośrednio na kontakt@webfolk.pl.");
+      var data = new FormData(form);
+      data.append("subject", "Zapytanie ze strony: " + form.elements.type.value);
+      if (contact.indexOf("@") > 0) data.append("replyto", contact);
+      send.disabled = true; send.textContent = "Wysyłam...";
+      fetch("https://api.web3forms.com/submit", { method: "POST", body: data })
+        .then(function (r) { return r.json(); })
+        .then(function (res) {
+          if (res.success) { form.reset(); ok.hidden = false; if (window.hcaptcha) hcaptcha.reset(); }
+          else fail("Nie udało się wysłać: " + (res.message || "spróbuj ponownie") + ". Możesz też napisać na kontakt@webfolk.pl.");
+        })
+        .catch(function () { fail("Brak połączenia. Spróbuj ponownie albo napisz na kontakt@webfolk.pl."); })
+        .then(function () { send.disabled = false; send.textContent = "Wyślij zapytanie"; });
     });
   }
 

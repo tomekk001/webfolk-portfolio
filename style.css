@@ -745,3 +745,8 @@ body::before {
   .callbar a:first-child { background: var(--swierk); color: var(--na-swierk); }
   .foot { padding-bottom: 96px; }
 }
+
+.cform__trap { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
+.cform__captcha { min-height: 78px; }
+.cform__ok { background: var(--na-swierk); color: var(--swierk); padding: 12px 14px; border-radius: var(--r); font-weight: 600; }
+.cform .btn:disabled { opacity: .6; cursor: wait; }
