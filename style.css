@@ -343,7 +343,22 @@ body::before {
   text-underline-offset: 4px;
 }
 .case:hover .case__go { text-decoration-thickness: 2px; }
-.cases__note { margin-top: 40px; font-size: var(--t-s); color: var(--szary); }
+.case__body { display: grid; gap: 6px; align-content: start; min-width: 0; }
+.case__badge {
+  justify-self: start;
+  margin-bottom: 6px;
+  font-size: var(--t-xs);
+  font-weight: 600;
+  color: var(--na-swierk);
+  background: var(--swierk);
+  padding: 4px 10px;
+  border-radius: 999px;
+}
+@media (min-width: 1000px) {
+  .case--lead { grid-column: 1 / -1; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); gap: 40px; align-items: center; }
+  .case--lead .case__shot { margin-bottom: 0; }
+  .case--lead .case__name { font-size: var(--t-xl); line-height: 1.1; letter-spacing: -0.03em; }
+}
 @media (prefers-reduced-motion: reduce) { .case__shot img { transition: none; } }
 
 /* ---------- Oferta: tabela cen zamiast kafelków ---------- */
