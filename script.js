@@ -157,3 +157,29 @@
   var year = document.getElementById("year");
   if (year) year.textContent = new Date().getFullYear();
 })();
+
+/* Przewijanie do sekcji bez dopisywania #kotwicy do adresu strony */
+(function () {
+  var smooth = !(window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches);
+  function go(id, animate) {
+    var el = id && document.getElementById(id);
+    if (!el) return false;
+    el.scrollIntoView({ behavior: animate && smooth ? "smooth" : "auto", block: "start" });
+    if (!el.hasAttribute("tabindex")) el.setAttribute("tabindex", "-1");
+    el.focus({ preventScroll: true });
+    return true;
+  }
+  document.addEventListener("click", function (e) {
+    var a = e.target.closest && e.target.closest('a[href^="#"]');
+    if (!a || e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey) return;
+    var id = decodeURIComponent(a.getAttribute("href").slice(1));
+    e.preventDefault();
+    if (!id) { window.scrollTo({ top: 0, behavior: smooth ? "smooth" : "auto" }); return; }
+    go(id, true);
+  });
+  if (location.hash) {
+    var id = decodeURIComponent(location.hash.slice(1));
+    history.replaceState(null, "", location.pathname + location.search);
+    window.addEventListener("load", function () { go(id, false); });
+  }
+})();
